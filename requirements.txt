@@ -1,0 +1,7 @@
+#This is an example file for you python dependencies- if you remove the "#" below the line becomes active.
+#gcp-cli
+#ncclient
+#netaddr
+#paramiko
+#kubernetes
+#azure-cli

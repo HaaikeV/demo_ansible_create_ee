@@ -1,0 +1,18 @@
+---
+version: 1.0
+
+build_arg_defaults:
+    EE_BASE_IMAGE: 'registry.redhat.io/ansible-automation-platform-21/ee-minimal-rhel8'
+
+dependencies:
+    galaxy: requirements.yml  #your collections go here
+#    python: requirements.txt #your python dependencies go here
+#    system: bindep.txt #your binaries/binary dependencies go here (kubectl, oc, unzip etc)
+
+additional_build_steps:
+  prepend: |
+    RUN whoami
+    RUN cat /etc/os-release
+  append:
+    - RUN echo This is a post-install command!
+    - RUN ls -la /etc
