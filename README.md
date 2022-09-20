@@ -1,1 +1,42 @@
-# demo_ansible_create_ee
+# Welcome to my EE demo
+
+> This demo was presented at Summit Connect in Utrecht, and aims to simiplify and explain the creation of Execution Environments.
+
+## Creating your EE
+
+### Step 1 - Install Ansible Builder.
+- sudo dnf install python38-pip git
+- pip3 install --user ansible-builder
+- podman login registry.redhat.io 
+- podman pull registry.redhat.io/ansible-automation-platform-21/ee-supported-rhel8:latest
+- podman image list
+
+### Step 2 - Create Build Directory and Definition Files.
+- cd ~; mkdir my-ee-factory; cd my-ee-factory
+- git pull https://github.com/HaaikeV/demo_ansible_create_ee.git
+
+### Step 3 - Populate The Files Based On Your Collection Requirements
+- execution-environment.yml = main file
+- requirements.yml = put your collection here
+- requirements.txt = put you python/pip dependencies for your collection here.
+- bindep.txt = put your DNF/YUM binaries here
+
+### Step 4 - Build!
+- ansible-builder build -t <custom-name>:<version>
+- podman images #get image ID
+
+### Step 5 - Push To An Image Repo
+- podman login quay.io #you need an account
+- podman commit <image id> quay.io/username/reponame
+- podman push quay.io/username/reponame
+
+### Step 6 - Use The Image in AAP.
+
+## Sources/References I used that might be interesting:
+- https://access.redhat.com/documentation/en-us/red_hat_ansible_automation_platform/2.1/html/ansible_builder_guide/assembly-building-off-existing-ee
+
+- https://ario.cloud/posts/ansible-builder-ee
+
+- https://gregsowell.com/?p=7086
+
+
