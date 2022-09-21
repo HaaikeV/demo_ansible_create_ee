@@ -15,11 +15,11 @@
 - cd ~; mkdir my-ee-factory; cd my-ee-factory
 - git pull https://github.com/HaaikeV/demo_ansible_create_ee.git
 
-### Step 3 - Populate The Files Based On Your Collection Requirements
-- execution-environment.yml = main file
-- requirements.yml = put your collection here
+### Step 3 - Populate The Definition Files Based On Your Collection Requirements
+- execution-environment.yml = main file that includes the 3 files below.
+- requirements.yml = put your collection here.
 - requirements.txt = put you python/pip dependencies for your collection here.
-- bindep.txt = put your DNF/YUM binaries here
+- bindep.txt = put your DNF/YUM binaries here.
 
 ### Step 4 - Build!
 - ansible-builder build -t custom-name:custom-version
