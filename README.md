@@ -6,7 +6,7 @@
 
 ### Step 1 - Install Ansible Builder
 
-- sudo dnf install python38-pip git
+- sudo dnf install python38-pip git podman
 - pip3 install --user ansible-builder
 - podman login registry.redhat.io
 - podman pull registry.redhat.io/ansible-automation-platform-21/ee-supported-rhel8:latest
