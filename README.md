@@ -32,8 +32,7 @@
 ### Step 5 - Push To An Image Repo
 
 - podman login quay.io #you need an account
-- podman commit image-id quay.io/hvanderm/forti
-- podman push quay.io/hvanderm/forti
+- podman push repo:version quay.io/hvanderm/repo:version
 
 ### Step 6 - Use The Image in AAP
 
