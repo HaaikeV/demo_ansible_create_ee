@@ -9,7 +9,7 @@
 - sudo dnf install python38-pip git podman
 - pip3 install --user ansible-builder
 - podman login registry.redhat.io
-- podman pull registry.redhat.io/ansible-automation-platform-21/ee-supported-rhel8:latest
+- podman pull registry.redhat.io/ansible-automation-platform-21/ee-minimal-rhel8:latest
 - podman image list
 
 ### Step 2 - Create Build Directory and Definition Files
