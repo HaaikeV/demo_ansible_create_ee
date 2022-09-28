@@ -26,7 +26,7 @@
 
 ### Step 4 - Build
 
-- ansible-builder build -t custom-name:custom-version
+- ansible-builder build -t my-forti-ee:1.0
 - podman images #get image ID
 
 ### Step 5 - Push To An Image Repo
