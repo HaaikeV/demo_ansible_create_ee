@@ -6,15 +6,16 @@
 
 ### Step 1 - Install Ansible Builder
 
-- sudo dnf install python38-pip git podman
-- pip3 install --user ansible-builder
+- su - builder
+- sudo dnf install python38-pip git podman; sudo dnf remove python36
+- pip3 install --user ansible-builder; pip3 install --user ansible
 - podman login registry.redhat.io
 - podman pull registry.redhat.io/ansible-automation-platform-21/ee-minimal-rhel8:latest
 - podman image list
 
 ### Step 2 - Create Build Directory and Definition Files
 
-- cd ~; git clone https://github.com/HaaikeV/demo_ansible_create_ee.git; cd demo_ansible_create_ee
+- cd ~; git clone https://github.com/HaaikeV/demo_ansible_create_ee.git; mv demo_ansible_create_ee ee_factory; cd ee_factory
 
 ### Step 3 - Populate The Definition Files Based On Your Collection Requirements
 
